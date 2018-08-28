@@ -52,7 +52,7 @@ static NSString *const LQCoreDataModelName = @"LDCoreData_OC";
 #endif
 }
 
-+ (void)insertWithEntity:(NSString *)name configData:(void(^)(NSManagedObject *obj))handle {
++ (void)insertEntity:(NSString *)name configData:(void(^)(NSManagedObject *obj))handle {
     
     NSManagedObjectContext *cxt = [self coreDataContext];
     NSManagedObject *obj = [NSEntityDescription insertNewObjectForEntityForName:name inManagedObjectContext:cxt];
@@ -60,7 +60,7 @@ static NSString *const LQCoreDataModelName = @"LDCoreData_OC";
     [self saveContext];
 }
 
-+ (void)fetchByEntity:(NSString *)name predicate:(NSPredicate *)pred properties:(NSArray *)pro sortKey:(NSString *)key result:(void(^)(NSArray *objs))block {
++ (void)fetchEntity:(NSString *)name predicate:(NSPredicate *)pred properties:(NSArray *)pro sortKey:(NSString *)key result:(void(^)(NSArray *objs))block {
     
     NSManagedObjectContext *cxt = [self coreDataContext];
     dispatch_queue_t queue = dispatch_queue_create("LQCoreData_fetchQueue", NULL);
@@ -93,7 +93,7 @@ static NSString *const LQCoreDataModelName = @"LDCoreData_OC";
     });
 }
 
-+ (void)deleteByEntity:(NSString *)name predicate:(NSPredicate *)pred result:(void(^)(NSArray *deletedObjs))block {
++ (void)deleteEntity:(NSString *)name predicate:(NSPredicate *)pred result:(void(^)(NSArray *deletedObjs))block {
     
     NSManagedObjectContext *cxt = [self coreDataContext];
     
@@ -120,7 +120,7 @@ static NSString *const LQCoreDataModelName = @"LDCoreData_OC";
     [self saveContext];
 }
 
-+ (void)updateWithEntity:(NSString *)name predicate:(NSPredicate *)pred configNewObj:(void(^)(NSArray *objs))objBlock result:(void(^)(NSError *error))rsBlock {
++ (void)updateEntity:(NSString *)name predicate:(NSPredicate *)pred configNewObj:(void(^)(NSArray *objs))objBlock result:(void(^)(NSError *error))rsBlock {
     
     NSManagedObjectContext *cxt = [self coreDataContext];
     NSFetchRequest *req = [[NSFetchRequest alloc]init];
@@ -138,7 +138,7 @@ static NSString *const LQCoreDataModelName = @"LDCoreData_OC";
     }
 }
 
-+ (void)batchDeleteWithEntity:(NSString *)name predicate:(NSPredicate *)pred result:(void(^)(NSError *error))rsBlock {
++ (void)batchDeleteEntity:(NSString *)name predicate:(NSPredicate *)pred result:(void(^)(NSError *error))rsBlock {
     
     NSManagedObjectContext *cxt = [self coreDataContext];
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:name];
@@ -159,7 +159,7 @@ static NSString *const LQCoreDataModelName = @"LDCoreData_OC";
     }
 }
 
-+ (void)batchUpdateWithEntity:(NSString *)name predicate:(NSPredicate *)pred propertiesToUpdate:(NSDictionary *)values result:(void(^)(NSError *error))rsBlock {
++ (void)batchUpdateEntity:(NSString *)name predicate:(NSPredicate *)pred propertiesToUpdate:(NSDictionary *)values result:(void(^)(NSError *error))rsBlock {
     
     NSManagedObjectContext *cxt = [self coreDataContext];
     NSBatchUpdateRequest *req = [NSBatchUpdateRequest batchUpdateRequestWithEntityName:name];

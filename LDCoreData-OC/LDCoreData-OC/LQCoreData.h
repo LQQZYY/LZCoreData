@@ -17,7 +17,7 @@
  @param name 实体名称
  @param handle 配置对应的实体实例数据
  */
-+ (void)insertWithEntity:(NSString *)name configData:(void(^)(NSManagedObject *obj))handle;
++ (void)insertEntity:(NSString *)name configData:(void(^)(NSManagedObject *obj))handle;
 
 /**
  查找某个实体数据
@@ -28,7 +28,7 @@
  @param key 排序依据, 以某个属性的值进行排序
  @param block 查询结果回调
  */
-+ (void)fetchByEntity:(NSString *)name predicate:(NSPredicate *)pred properties:(NSArray *)pro sortKey:(NSString *)key result:(void(^)(NSArray *objs))block;
++ (void)fetchEntity:(NSString *)name predicate:(NSPredicate *)pred properties:(NSArray *)pro sortKey:(NSString *)key result:(void(^)(NSArray *objs))block;
 
 /**
  删除某个实体的一条数据
@@ -37,7 +37,7 @@
  @param pred 查询条件(谓词)
  @param block 删除的实体对象
  */
-+ (void)deleteByEntity:(NSString *)name predicate:(NSPredicate *)pred result:(void(^)(NSArray *deletedObjs))block;
++ (void)deleteEntity:(NSString *)name predicate:(NSPredicate *)pred result:(void(^)(NSArray *deletedObjs))block;
 
 /**
  更新实体的数据
@@ -47,7 +47,7 @@
  @param objBlock 配置更新的数据
  @param rsBlock 结果回调
  */
-+ (void)updateWithEntity:(NSString *)name predicate:(NSPredicate *)pred configNewObj:(void(^)(NSArray *objs))objBlock result:(void(^)(NSError *error))rsBlock;
++ (void)updateEntity:(NSString *)name predicate:(NSPredicate *)pred configNewObj:(void(^)(NSArray *objs))objBlock result:(void(^)(NSError *error))rsBlock;
 
 /**
  批量删除某个实体数据
@@ -56,7 +56,7 @@
  @param pred 查询条件(谓词)
  @param rsBlock 结果回调
  */
-+ (void)batchDeleteWithEntity:(NSString *)name predicate:(NSPredicate *)pred result:(void(^)(NSError *error))rsBlock;
++ (void)batchDeleteEntity:(NSString *)name predicate:(NSPredicate *)pred result:(void(^)(NSError *error))rsBlock;
 
 /**
  批量更新某个实体数据
@@ -66,7 +66,7 @@
  @param values 更新的数据
  @param rsBlock 结果回调
  */
-+ (void)batchUpdateWithEntity:(NSString *)name predicate:(NSPredicate *)pred propertiesToUpdate:(NSDictionary *)values result:(void(^)(NSError *error))rsBlock;
++ (void)batchUpdateEntity:(NSString *)name predicate:(NSPredicate *)pred propertiesToUpdate:(NSDictionary *)values result:(void(^)(NSError *error))rsBlock;
 
 #pragma 预设的谓词查找条件
 + (NSPredicate *)predicateOfLike:(NSString *)value forProperty:(NSString *)key;

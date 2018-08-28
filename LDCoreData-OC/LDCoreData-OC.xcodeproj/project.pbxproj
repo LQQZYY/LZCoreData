@@ -106,6 +106,7 @@
 		91ADA0621F0A1F73008AACDD /* LDCoreData-OC */ = {
 			isa = PBXGroup;
 			children = (
+				D20B4FBE213550D4002AB04B /* LQCoreData */,
 				91ADA0661F0A1F73008AACDD /* AppDelegate.h */,
 				91ADA0671F0A1F73008AACDD /* AppDelegate.m */,
 				91ADA0691F0A1F73008AACDD /* ViewController.h */,
@@ -116,8 +117,6 @@
 				91ADA0771F0A1F73008AACDD /* Info.plist */,
 				91ADA06F1F0A1F73008AACDD /* LDCoreData_OC.xcdatamodeld */,
 				91ADA0631F0A1F73008AACDD /* Supporting Files */,
-				D254FFE02084E217007209D2 /* LQCoreData.h */,
-				D254FFE12084E217007209D2 /* LQCoreData.m */,
 			);
 			path = "LDCoreData-OC";
 			sourceTree = "<group>";
@@ -137,6 +136,15 @@
 				91ADA0821F0A1F73008AACDD /* Info.plist */,
 			);
 			path = "LDCoreData-OCUITests";
+			sourceTree = "<group>";
+		};
+		D20B4FBE213550D4002AB04B /* LQCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D254FFE02084E217007209D2 /* LQCoreData.h */,
+				D254FFE12084E217007209D2 /* LQCoreData.m */,
+			);
+			name = LQCoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

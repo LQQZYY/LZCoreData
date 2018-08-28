@@ -19,25 +19,25 @@
 - (void)batchDeleteThan60 {
     
     NSPredicate *pre = [LQCoreData predicateOfBigThan:60 forProperty:@"age"];
-    [LQCoreData batchDeleteWithEntity:@"PeopleEntity" predicate:pre result:^(NSError *error) {
+    [LQCoreData batchDeleteEntity:@"PeopleEntity" predicate:pre result:^(NSError *error) {
         NSLog(@"error: %@", error.userInfo);
     }];
 }
 - (void)batchUpdateZLY {
     NSPredicate *pre = [LQCoreData predicateOfMatch:@"赵丽颖" forProperty:@"name"];
-    [LQCoreData batchUpdateWithEntity:@"PeopleEntity" predicate:pre propertiesToUpdate:@{@"age": @20} result:^(NSError *error) {
+    [LQCoreData batchUpdateEntity:@"PeopleEntity" predicate:pre propertiesToUpdate:@{@"age": @20} result:^(NSError *error) {
         
         NSLog(@"已更新");
     }];
 }
 - (void)deleteAll {
-    [LQCoreData deleteByEntity:@"PeopleEntity" predicate:nil result:^(NSArray *deletedObjs) {
+    [LQCoreData deleteEntity:@"PeopleEntity" predicate:nil result:^(NSArray *deletedObjs) {
         NSLog(@"已删除");
     }];
 }
 - (void)select50 {
     NSPredicate *pre = [LQCoreData predicateOfSmallThan:50 forProperty:@"age"];
-    [LQCoreData fetchByEntity:@"PeopleEntity" predicate:pre properties:nil sortKey:nil result:^(NSArray *info) {
+    [LQCoreData fetchEntity:@"PeopleEntity" predicate:pre properties:nil sortKey:nil result:^(NSArray *info) {
         NSLog(@"*********** 查询 age 小于 50 **********");
         for (PeopleEntity *p in info) {
             NSLog(@"name: %@---age: %d", p.name, p.age);
@@ -47,7 +47,7 @@
 - (void)updateFBB {
     NSLog(@"*********** 更新 **********");
     NSPredicate *pre = [LQCoreData predicateOfMatch:@"范冰冰" forProperty:@"name"];
-    [LQCoreData updateWithEntity:@"PeopleEntity" predicate:pre configNewObj:^(NSArray *objs) {
+    [LQCoreData updateEntity:@"PeopleEntity" predicate:pre configNewObj:^(NSArray *objs) {
         for (PeopleEntity *p in objs) {
             p.name = @"哈哈哈";
             p.age = 100;
@@ -59,7 +59,7 @@
 - (void)delete30 {
     NSLog(@"************** 删除年龄为 30 的 ***********");
     NSPredicate *pre = [LQCoreData predicateOfEqual:30 forProperty:@"age"];
-    [LQCoreData deleteByEntity:@"PeopleEntity" predicate:pre result:^(NSArray *deletedObjs) {
+    [LQCoreData deleteEntity:@"PeopleEntity" predicate:pre result:^(NSArray *deletedObjs) {
         for (PeopleEntity *p in deletedObjs) {
             NSLog(@"name: %@---age: %d", p.name, p.age);
         }
@@ -68,7 +68,7 @@
 - (void)selectZLY {
     NSPredicate *pre = [LQCoreData predicateOfMatch:@"赵丽颖" forProperty:@"name"];
     
-    [LQCoreData fetchByEntity:@"PeopleEntity" predicate:pre properties:nil sortKey:nil result:^(NSArray *info) {
+    [LQCoreData fetchEntity:@"PeopleEntity" predicate:pre properties:nil sortKey:nil result:^(NSArray *info) {
         NSLog(@"************* 查询赵丽颖 ************");
         for (PeopleEntity *p in info) {
             NSLog(@"name: %@---age: %d", p.name, p.age);
@@ -78,7 +78,7 @@
 
 - (void)selectAll {
     
-    [LQCoreData fetchByEntity:@"PeopleEntity" predicate:nil properties:nil sortKey:nil result:^(NSArray *info) {
+    [LQCoreData fetchEntity:@"PeopleEntity" predicate:nil properties:nil sortKey:nil result:^(NSArray *info) {
         
         for (PeopleEntity *p in info) {
             NSLog(@"name: %@---age: %d", p.name, p.age);
@@ -90,7 +90,7 @@
     NSArray *names = @[@"夏侯惇", @"貂蝉", @"诸葛亮", @"张三", @"李四", @"流火绯瞳", @"流火", @"李白", @"张飞", @"韩信", @"范冰冰", @"赵丽颖"];
     
     for (int i = 0; i < 60; i++) {
-        [LQCoreData insertWithEntity:@"PeopleEntity" configData:^(NSManagedObject *obj) {
+        [LQCoreData insertEntity:@"PeopleEntity" configData:^(NSManagedObject *obj) {
             
             PeopleEntity *entity = (PeopleEntity *)obj;
             entity.name = names[i%names.count];

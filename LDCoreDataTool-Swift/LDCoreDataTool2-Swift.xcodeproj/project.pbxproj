@@ -13,12 +13,12 @@
 		91ADA0261F09D405008AACDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91ADA0251F09D405008AACDD /* Assets.xcassets */; };
 		91ADA0291F09D405008AACDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91ADA0271F09D405008AACDD /* LaunchScreen.storyboard */; };
 		91ADA0341F09D405008AACDD /* LDCoreDataTool2_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA0331F09D405008AACDD /* LDCoreDataTool2_SwiftUITests.swift */; };
-		91ADA03F1F09D420008AACDD /* LQCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA03E1F09D420008AACDD /* LQCoreData.swift */; };
 		91ADA0421F09D439008AACDD /* LDCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA0401F09D439008AACDD /* LDCoreDataModel.xcdatamodeld */; };
 		91ADA04F1F09D7D8008AACDD /* ManEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA04B1F09D7D8008AACDD /* ManEntity+CoreDataClass.swift */; };
 		91ADA0501F09D7D8008AACDD /* ManEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA04C1F09D7D8008AACDD /* ManEntity+CoreDataProperties.swift */; };
 		91ADA0511F09D7D8008AACDD /* PeopleEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA04D1F09D7D8008AACDD /* PeopleEntity+CoreDataClass.swift */; };
 		91ADA0521F09D7D8008AACDD /* PeopleEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ADA04E1F09D7D8008AACDD /* PeopleEntity+CoreDataProperties.swift */; };
+		D2A8B9BF213549B4000B274E /* LQCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A8B9BE213549B4000B274E /* LQCoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +42,12 @@
 		91ADA02F1F09D405008AACDD /* LDCoreDataTool2-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LDCoreDataTool2-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91ADA0331F09D405008AACDD /* LDCoreDataTool2_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDCoreDataTool2_SwiftUITests.swift; sourceTree = "<group>"; };
 		91ADA0351F09D405008AACDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91ADA03E1F09D420008AACDD /* LQCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LQCoreData.swift; sourceTree = "<group>"; };
 		91ADA0411F09D439008AACDD /* LDCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LDCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		91ADA04B1F09D7D8008AACDD /* ManEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ManEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91ADA04C1F09D7D8008AACDD /* ManEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ManEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91ADA04D1F09D7D8008AACDD /* PeopleEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PeopleEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		91ADA04E1F09D7D8008AACDD /* PeopleEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PeopleEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D2A8B9BE213549B4000B274E /* LQCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LQCoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 		91ADA01D1F09D405008AACDD /* LDCoreDataTool2-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				91ADA03E1F09D420008AACDD /* LQCoreData.swift */,
+				D2A8B9BE213549B4000B274E /* LQCoreData.swift */,
 				91ADA01E1F09D405008AACDD /* AppDelegate.swift */,
 				91ADA0201F09D405008AACDD /* ViewController.swift */,
 				91ADA0221F09D405008AACDD /* Main.storyboard */,
@@ -218,9 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				91ADA0211F09D405008AACDD /* ViewController.swift in Sources */,
-				91ADA03F1F09D420008AACDD /* LQCoreData.swift in Sources */,
 				91ADA0511F09D7D8008AACDD /* PeopleEntity+CoreDataClass.swift in Sources */,
 				91ADA01F1F09D405008AACDD /* AppDelegate.swift in Sources */,
+				D2A8B9BF213549B4000B274E /* LQCoreData.swift in Sources */,
 				91ADA0421F09D439008AACDD /* LDCoreDataModel.xcdatamodeld in Sources */,
 				91ADA0521F09D7D8008AACDD /* PeopleEntity+CoreDataProperties.swift in Sources */,
 				91ADA04F1F09D7D8008AACDD /* ManEntity+CoreDataClass.swift in Sources */,

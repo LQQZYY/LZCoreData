@@ -85,13 +85,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         for i in 0...60 {
             
-            LQCoreData.insert(withEntityName: "PeopleEntity", configDataHandle: { (obj) in
+            LQCoreData.insert(entity: "PeopleEntity", configHandler: { (obj) in
                 
                 let people = obj as! PeopleEntity
                 people.name = names[i%names.count]
                 people.age = Int16(arc4random() % 80 + UInt32(10))
                 
-            }, result: { (error) in
+            }, resulteHandler: { (error) in
                 if let err = error {
                     print("保存失败\(err)")
                 } else {
@@ -102,7 +102,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func selectAll() {
-        LQCoreData.fetch(withEntityName: "PeopleEntity", predicate: nil) { (results) in
+        LQCoreData.fetch(entity: "PeopleEntity", predicate: nil) { (results) in
             print("**************************查询所有*******************************")
             if let rs = results {
                 for info in rs {
@@ -120,7 +120,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //        let pre = LQCoreData.equalString(propertyName: "name", to: "赵丽颖")
         let pre = LQCoreData.predicate(.match(string: "赵丽颖", forProperty: "name"))
         
-        LQCoreData.fetch(withEntityName: "PeopleEntity", predicate: pre) { (results) in
+        LQCoreData.fetch(entity: "PeopleEntity", predicate: pre) { (results) in
             print("**************************查询赵丽颖*******************************")
             if let rs = results {
                 for info in rs {
@@ -140,7 +140,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let pre1 = LQCoreData.predicate(.equalTo(number: 30, forProperty: "age"))
         
-        LQCoreData.delete(withEntityName: "PeopleEntity", predicate: pre1) { (error, info) in
+        LQCoreData.delete(entity: "PeopleEntity", predicate: pre1) { (error, info) in
             if let err = error {
                 print("err: \(err)")
             } else {
@@ -176,7 +176,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let pre = LQCoreData.predicate(.smallThan(number: 50, forProperty: "age"))
         
-        LQCoreData.fetch(withEntityName: "PeopleEntity", predicate: pre) { (results) in
+        LQCoreData.fetch(entity: "PeopleEntity", predicate: pre) { (results) in
             print("**************************查询age小于50*******************************")
             if let rs = results {
                 for info in rs {
@@ -191,7 +191,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func deleteAll() {
         
-        LQCoreData.delete(withEntityName: "PeopleEntity", predicate: nil) { (error, objs) in
+        LQCoreData.delete(entity: "PeopleEntity", predicate: nil) { (error, objs) in
             if let err = error {
                 print("err: \(err)")
             } else {
@@ -203,7 +203,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func batchUpdateZLY() {
         let pre = LQCoreData.predicate(.match(string: "赵丽颖", forProperty: "name"))
         
-        LQCoreData.batchUpdate(withEntityName: "PeopleEntity", predicate: pre, propertiesToUpdate: ["age": 28]) { (error) in
+        LQCoreData.batchUpdate(entity: "PeopleEntity", predicate: pre, propertiesToUpdate: ["age": 28]) { (error) in
             if let err = error {
                 print("err: \(err)")
             } else {
@@ -216,7 +216,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let pre = LQCoreData.predicate(.bigThan(number: 60, forProperty: "age"))
         
-        LQCoreData.batchDelete(withEntityName: "PeopleEntity", predicate: pre) { (error) in
+        LQCoreData.batchDelete(entity: "PeopleEntity", predicate: pre) { (error) in
             if let err = error {
                 print("err: \(err)")
             } else {
