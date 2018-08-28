@@ -159,4 +159,14 @@ enum LQPredicateType {
 }
 ```
 
-   
+## 更多内容可参考本人博客
+
+##### [[iOS]Core Data浅析一 -- 启用Core Data](http://www.jianshu.com/p/a6d2c35d3983)
+
+##### [[iOS]Core Data浅析二 -- 转换实体(Entity)为模型对象](http://www.jianshu.com/p/7a8e3cad6181)
+
+##### [[iOS]Core Data浅析三 --  数据的增删改查](http://www.jianshu.com/p/3e5dbc491677)
+
+以及一个, 在新版Xcode中使用的注意事项:
+
+##### [[Core Data]Xcode 8+ 新建NSManageObject subclass方法](http://www.jianshu.com/p/b3c734ba7181)
