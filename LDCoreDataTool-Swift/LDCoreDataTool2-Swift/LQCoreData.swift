@@ -13,7 +13,7 @@ import CoreData
 fileprivate let LQCoreDataModelName = "LDCoreDataModel"
 class LQCoreData {
 
-    static var context: NSManagedObjectContext = {
+    private static var context: NSManagedObjectContext = {
         // 如果是新建项目时启用了Core Data, 则可使用AppDelegate中的context
         // 即
         //        let delegate = UIApplication.shared.delegate as! AppDelegate
@@ -33,7 +33,7 @@ class LQCoreData {
         return container.viewContext
     }()
     
-    class func saveContext(_ resuleHandler: ((_ error: NSError?) -> Void)? = nil) {
+    private class func saveContext(_ resuleHandler: ((_ error: NSError?) -> Void)? = nil) {
         
         if context.hasChanges {
             do {
@@ -55,7 +55,7 @@ class LQCoreData {
     ///
     /// - Parameters:
     ///   - name: 实体(Entity)名称
-    ///   - handle: 配置待保存数据回调
+    ///   - handler: 配置待保存数据回调
     ///   - rs: 保存结果回调
     class func insert(entity name: String, configHandler handler: ((_ obj: NSManagedObject) -> Void), resulteHandler rs: ((_ error: NSError? ) -> Void)? = nil) {
         

@@ -86,7 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         for i in 0...60 {
             
             LQCoreData.insert(entity: "PeopleEntity", configHandler: { (obj) in
-                
+                // 将回调的obj转换为具体的实体进行赋值
                 let people = obj as! PeopleEntity
                 people.name = names[i%names.count]
                 people.age = Int16(arc4random() % 80 + UInt32(10))
